@@ -1,0 +1,12 @@
+.center {
+    text-align: center;
+}
+
+#start {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    background-color: Red;
+    font-size: 50px;
+    margin-left: 45%;
+}
