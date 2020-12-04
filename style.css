@@ -3,10 +3,30 @@
 }
 
 #start {
-    height: 150px;
-    width: 150px;
-    border-radius: 75px;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
     background-color: Red;
     font-size: 50px;
-    margin-left: 45%;
+    margin-left: 40%;
+}
+
+.container {
+    width: 900px;
+    background-color: rgb(193, 193, 255);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.btn {
+    background-color: rgb(168, 245, 219);
+}
+
+.next-btn {
+    padding: 10px;
+}
+
+.hide {
+    display: none;
 }
