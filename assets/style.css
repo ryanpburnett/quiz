@@ -1,0 +1,36 @@
+button:active {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+#start {
+    margin: 0 auto;
+    display: block;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    background-color: Red;
+    font-size: 50px;
+}
+
+#question-div {
+    margin: auto;
+    padding: 20px;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 3px solid black;
+}
+
+.answerButton {
+    float: left;
+    margin: 20px;
+    display: block;
+    height: 100px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    font-size: 30px;
+}
