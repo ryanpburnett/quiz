@@ -32,8 +32,13 @@ let questions = [
     },
 ]
 
+const timer = document.getElementById('timer')
+let countDown = 100
+
 currentQ = 0
-lastQIndex = questions.length -1
+lastQIndex = questions.length
+
+console.log(lastQIndex)
 
 function startQuiz() {
     start.style.display = "none";
@@ -43,6 +48,10 @@ function startQuiz() {
     b.style.display = "block";
     c.style.display = "block";
     scoreP.style.display = "block";
+    setInterval(function() {
+        countDown--
+        timer.innerText = countDown + ' seconds left'
+    }, 1000);
     console.log(currentQ)
 }
 
@@ -52,7 +61,7 @@ function endQuiz(){
 }
 
 function newQuestion() {
-    if(currentQ < 3){
+    if(currentQ < lastQIndex){
     questionDiv.innerHTML = questions[currentQ].q
     
     }else{
