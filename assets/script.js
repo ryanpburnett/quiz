@@ -35,7 +35,7 @@ let questions = [
 ]
 
 const timer = document.getElementById('timer')
-let countDown = 1000000
+let countDown = 100
 
 function timerFunction() {
     if(countDown > 0){
