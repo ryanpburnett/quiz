@@ -46,6 +46,24 @@ function newQuestion() {
     scoreP.style.display = "block";
 }
 
+function answerIsCorrenct(){
+    console.log("correct")
+}
+
+function answerIsIncorrect(){
+    console.log("wrongamundo")
+}
+
+function checkAnswer(userAns){
+    if (questions[currentQ].ans === userAns){
+        scoreValue++;
+        scoreP.innerText=scoreValue;
+        answerIsCorrenct();
+    }else{
+        answerIsIncorrect();
+    }
+}
+
 document.getElementById("start").addEventListener("click", newQuestion)
 document.getElementById("A").addEventListener("click", newQuestion)
 document.getElementById("B").addEventListener("click", newQuestion)
