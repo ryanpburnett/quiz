@@ -1,5 +1,7 @@
 const start = document.getElementById("start")
 const questionDiv = document.getElementById("question-div")
+const answerDiv = document.getElementById("answer-div")
+const btnDiv = document.getElementById("btn-div")
 const a = document.getElementById("A")
 const b = document.getElementById("B")
 const c = document.getElementById("C")
@@ -10,25 +12,25 @@ scoreP.innerText=scoreValue
 
 let questions = [
     {
-        q: "Question 1.",
-        a: "A",
-        b: "B",
-        c: "C",
+        q: "What does HTML stand for?",
+        a: "Humans Try Milking Llamas",
+        b: "HyperText Markup Language",
+        c: "HyperText Managing Language",
+        ans: "B"
+    },
+    {
+        q: "What does CSS stand for?",
+        a: "Cascading Style Sheets",
+        b: "Cuneiform Style Sheets",
+        c: "Captain Sammy Says",
         ans: "A"
     },
     {
-        q: "Question 2.",
-        a: "A",
-        b: "B",
-        c: "C",
-        ans: "A"
-    },
-    {
-        q: "Question 3.",
-        a: "A",
-        b: "B",
-        c: "C",
-        ans: "A"
+        q: "What Does JS stand for?",
+        a: "Johan Sebastian (Bach)",
+        b: "JavaStyle",
+        c: "JavaScript",
+        ans: "C"
     },
 ]
 
@@ -54,9 +56,12 @@ function startQuiz() {
     start.style.display = "none";
     questionDiv.style.display = "block";
     questionDiv.innerHTML = questions[currentQ].q;
-    a.style.display = "block";
-    b.style.display = "block";
-    c.style.display = "block";
+    answerDiv.style.display = "block";
+    answerDiv.innerHTML = 
+    `<p>A:   ${questions[currentQ].a}</p> 
+    <p>B:   ${questions[currentQ].b}</p> 
+    <p>C:   ${questions[currentQ].c}</p>`;
+    btnDiv.style.display = "block";
     scoreP.style.display = "block";
     setInterval(timerFunction, 1000);
     console.log(currentQ);
@@ -70,6 +75,10 @@ function endQuiz(){
 function newQuestion() {
     if(currentQ < lastQIndex){
     questionDiv.innerHTML = questions[currentQ].q
+    answerDiv.innerHTML = 
+    `<p>A:   ${questions[currentQ].a}</p> 
+    <p>B:   ${questions[currentQ].b}</p> 
+    <p>C:   ${questions[currentQ].c}</p>`;
     }else{
         endQuiz()
         console.log("finished")
