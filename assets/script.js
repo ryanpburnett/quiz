@@ -10,27 +10,30 @@ scoreP.innerText=scoreValue
 
 let questions = [
     {
-        q: "The answer is A.",
+        q: "Question 1.",
         a: "A",
         b: "B",
         c: "C",
-        ans: "A",
+        ans: "A"
     },
     {
-        q: "The answer is X.",
-        a: "X",
-        b: "Y",
-        c: "Z",
-        ans: "A",
+        q: "Question 2.",
+        a: "A",
+        b: "B",
+        c: "C",
+        ans: "A"
     },
     {
-        q: "The answer is F.",
-        a: "F",
-        b: "G",
-        c: "H",
-        ans: "A",
+        q: "Question 3.",
+        a: "A",
+        b: "B",
+        c: "C",
+        ans: "A"
     },
 ]
+
+currentQ = 0
+lastQIndex = questions.length -1
 
 function startQuiz() {
     start.style.display = "none";
@@ -40,36 +43,44 @@ function startQuiz() {
     b.style.display = "block";
     c.style.display = "block";
     scoreP.style.display = "block";
+    console.log(currentQ)
 }
 
-currentQ = 0
-lastQIndex = questions.length -1
+function endQuiz(){
+    alert("Your score is " + scoreValue + "!")
+    console.log(currentQ)
+}
 
 function newQuestion() {
-    if(currentQ < lastQIndex){
-    questionDiv.innerHTML = questions[currentQ].q;
-    currentQ++
+    if(currentQ < 3){
+    questionDiv.innerHTML = questions[currentQ].q
+    
     }else{
+        endQuiz()
         console.log("finished")
     }
-}
-
-function answerIsCorrenct(){
-    console.log("correct")
-}
-
-function answerIsIncorrect(){
-    console.log("wrongamundo")
+    console.log(currentQ)
 }
 
 function checkAnswer(userAns){
     if (questions[currentQ].ans === userAns){
-        scoreValue++;
-        scoreP.innerText=scoreValue;
         answerIsCorrenct();
     }else{
         answerIsIncorrect();
     }
+    currentQ++
+}
+
+function answerIsCorrenct(){
+    scoreValue++;
+    scoreP.innerText=scoreValue;
+    newQuestion();
+    console.log("correct")
+}
+
+function answerIsIncorrect(){
+    newQuestion();
+    console.log("wrongamundo")
 }
 
 document.getElementById("start").addEventListener("click", startQuiz)
