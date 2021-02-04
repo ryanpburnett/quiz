@@ -35,6 +35,16 @@ let questions = [
 const timer = document.getElementById('timer')
 let countDown = 100
 
+function timerFunction() {
+    if(countDown > 0){
+        countDown--
+        timer.innerText = countDown + ' seconds left'
+    }else{
+        alert("Time's up!")
+        clearInterval()
+    }
+}
+
 currentQ = 0
 lastQIndex = questions.length
 
@@ -48,11 +58,8 @@ function startQuiz() {
     b.style.display = "block";
     c.style.display = "block";
     scoreP.style.display = "block";
-    setInterval(function() {
-        countDown--
-        timer.innerText = countDown + ' seconds left'
-    }, 1000);
-    console.log(currentQ)
+    setInterval(timerFunction, 1000);
+    console.log(currentQ);
 }
 
 function endQuiz(){
@@ -63,7 +70,6 @@ function endQuiz(){
 function newQuestion() {
     if(currentQ < lastQIndex){
     questionDiv.innerHTML = questions[currentQ].q
-    
     }else{
         endQuiz()
         console.log("finished")
@@ -88,6 +94,7 @@ function answerIsCorrenct(){
 }
 
 function answerIsIncorrect(){
+    countDown-=10
     newQuestion();
     console.log("wrongamundo")
 }
