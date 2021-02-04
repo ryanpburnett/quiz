@@ -27,10 +27,15 @@ button:focus {
 .answerButton {
     float: left;
     margin: 20px;
-    display: block;
     height: 100px;
     width: 200px;
     border-radius: 5px;
     background-color: cornflowerblue;
     font-size: 30px;
+}
+
+#score-p {
+    font-size: 40px;
+    color: green;
+    font-weight: bold;
 }

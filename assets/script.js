@@ -3,8 +3,10 @@ const questionDiv = document.getElementById("question-div")
 const a = document.getElementById("A")
 const b = document.getElementById("B")
 const c = document.getElementById("C")
-const scoreDiv = document.getElementById("score-div")
-let score = 0
+const scoreP = document.getElementById("score-p")
+
+let scoreValue = 0
+scoreP.innerText=scoreValue
 
 let questions = [
     {
@@ -33,11 +35,6 @@ let questions = [
 
 currentQ = 0
 
-document.getElementById("start").addEventListener("click", newQuestion)
-document.getElementById("A").addEventListener("click", newQuestion)
-document.getElementById("B").addEventListener("click", newQuestion)
-document.getElementById("C").addEventListener("click", newQuestion)
-
 function newQuestion() {
     start.style.display = "none";
     questionDiv.style.display = "block";
@@ -46,8 +43,14 @@ function newQuestion() {
     a.style.display = "block";
     b.style.display = "block";
     c.style.display = "block";
-    score.style.display = "block";
+    scoreP.style.display = "block";
 }
+
+document.getElementById("start").addEventListener("click", newQuestion)
+document.getElementById("A").addEventListener("click", newQuestion)
+document.getElementById("B").addEventListener("click", newQuestion)
+document.getElementById("C").addEventListener("click", newQuestion)
+
 
 
 
