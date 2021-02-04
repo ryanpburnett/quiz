@@ -35,7 +35,7 @@ let questions = [
 ]
 
 const timer = document.getElementById('timer')
-let countDown = 100
+let countDown = 1000000
 
 function timerFunction() {
     if(countDown > 0){
@@ -68,8 +68,14 @@ function startQuiz() {
 }
 
 function endQuiz(){
+    if(scoreValue === lastQIndex){
+        document.body.style.backgroundImage = 
+        "url('./assets/trophy.jpg') height: 100"
+        alert("Perfect score!  You got a " + lastQIndex + "!")
+    }else{
     alert("Your score is " + scoreValue + "!")
     console.log(currentQ)
+    }
 }
 
 function newQuestion() {

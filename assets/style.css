@@ -41,7 +41,7 @@ p {
 }
 
 .answerButton {
-    float: left;
+    float: inline-end;
     margin: 20px;
     height: 100px;
     width: 200px;
