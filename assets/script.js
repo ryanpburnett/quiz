@@ -66,13 +66,16 @@ function startQuiz() {
 
 function endQuiz(){
     if(scoreValue === lastQIndex){
-        document.body.style.backgroundImage = 
-        "url('./assets/trophy.jpg') height: 100"
-        prompt("Perfect score!  You got a " + lastQIndex + "!\n Please enter your initials", "RPB");
+        let perfScore = prompt("Perfect score!  You got a " + scoreValue + "!\n Please enter your initials", "RPB");
+        localStorage.setItem("initials", perfScore)
+        localStorage.setItem("score", scoreValue)
     }else{
-    prompt("Your score is " + scoreValue + "!!\n Please enter your initials", "RPB");
+        let imperfScore = prompt("Your score is " + scoreValue + "!!\n Please enter your initials", "RPB");
+        localStorage.setItem("initials", imperfScore)
+        localStorage.setItem("score", scoreValue)
     }
     clearInterval()
+    
 }
 
 function newQuestion() {
