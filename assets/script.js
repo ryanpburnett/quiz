@@ -42,8 +42,8 @@ function timerFunction() {
         countDown--
         timer.innerText = countDown + ' seconds left'
     }else{
+        clearInterval()
         alert("Time's up!")
-        clearInterval(time)
     }
 }
 
@@ -65,26 +65,26 @@ function startQuiz() {
 }
 
 function endQuiz(){
-    if(scoreValue === lastQIndex){
-        let perfScore = prompt("Perfect score!  You got a " + scoreValue + "!\n Please enter your initials", "RPB");
-        localStorage.setItem("initials", perfScore)
-        localStorage.setItem("score", scoreValue)
-    }else{
-        let imperfScore = prompt("Your score is " + scoreValue + "!!\n Please enter your initials", "RPB");
-        localStorage.setItem("initials", imperfScore)
-        localStorage.setItem("score", scoreValue)
-    }
     clearInterval()
-    
+    if(scoreValue === lastQIndex){
+        alert("Perfect Score!!!")
+    }
+    let initials = prompt("Your score is " + scoreValue + "!\n Please enter your initials", "RPB");
+    localStorage.setItem("initials", initials);
+    localStorage.setItem("score", scoreValue);
+    let highScoreList = 
+    localStorage.getItem("initials") + " " +
+    localStorage.getItem("score")
+    alert(highScoreList)
 }
 
 function newQuestion() {
     if(currentQ < lastQIndex){
     questionDiv.innerHTML = questions[currentQ].q
     answerDiv.innerHTML = 
-    `<p>A:   ${questions[currentQ].a}</p> 
-    <p>B:   ${questions[currentQ].b}</p> 
-    <p>C:   ${questions[currentQ].c}</p>`;
+    `<p>A: ${questions[currentQ].a}</p> 
+    <p>B: ${questions[currentQ].b}</p> 
+    <p>C: ${questions[currentQ].c}</p>`;
     }else{
         endQuiz()
     }
