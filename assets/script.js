@@ -43,14 +43,12 @@ function timerFunction() {
         timer.innerText = countDown + ' seconds left'
     }else{
         alert("Time's up!")
-        clearInterval()
+        clearInterval(time)
     }
 }
 
 currentQ = 0
 lastQIndex = questions.length
-
-console.log(lastQIndex)
 
 function startQuiz() {
     start.style.display = "none";
@@ -64,18 +62,17 @@ function startQuiz() {
     btnDiv.style.display = "block";
     scoreP.style.display = "block";
     setInterval(timerFunction, 1000);
-    console.log(currentQ);
 }
 
 function endQuiz(){
     if(scoreValue === lastQIndex){
         document.body.style.backgroundImage = 
         "url('./assets/trophy.jpg') height: 100"
-        alert("Perfect score!  You got a " + lastQIndex + "!")
+        prompt("Perfect score!  You got a " + lastQIndex + "!\n Please enter your initials", "RPB");
     }else{
-    alert("Your score is " + scoreValue + "!")
-    console.log(currentQ)
+    prompt("Your score is " + scoreValue + "!!\n Please enter your initials", "RPB");
     }
+    clearInterval()
 }
 
 function newQuestion() {
@@ -87,9 +84,7 @@ function newQuestion() {
     <p>C:   ${questions[currentQ].c}</p>`;
     }else{
         endQuiz()
-        console.log("finished")
     }
-    console.log(currentQ)
 }
 
 function checkAnswer(userAns){
@@ -105,13 +100,11 @@ function answerIsCorrenct(){
     scoreValue++;
     scoreP.innerText=scoreValue;
     newQuestion();
-    console.log("correct")
 }
 
 function answerIsIncorrect(){
     countDown-=10
     newQuestion();
-    console.log("wrongamundo")
 }
 
 document.getElementById("start").addEventListener("click", startQuiz)
