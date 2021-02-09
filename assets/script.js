@@ -38,14 +38,16 @@ let questions = [
     },
 ]
 
-let countDown = 100
+let countDown = 5
+let timerInterval
 
 function timerFunction() {
     if(countDown > 0){
         countDown--
         timer.innerText = countDown + ' seconds left'
     }else{
-        clearInterval()
+        clearInterval(timerInterval)
+        timer.innerText = "Time's up!"
         alert("Time's up!")
     }
     if(countDown < 11){
@@ -69,11 +71,11 @@ function startQuiz() {
     btnDiv.style.display = "block";
     scoreP.style.display = "block";
     scoreP.innerHTML = "Score = " + scoreValue
-    setInterval(timerFunction, 1000);
+    timerInterval = setInterval(timerFunction, 1000);
 }
 
 function endQuiz(){
-    clearInterval()
+    clearInterval(timerInterval)
     if(scoreValue === lastQIndex){
         alert("Perfect Score!!!")
     }
