@@ -38,7 +38,7 @@ let questions = [
     },
 ]
 
-let countDown = 100
+let countDown = 15
 
 function timerFunction() {
     if(countDown > 0){
@@ -47,6 +47,9 @@ function timerFunction() {
     }else{
         clearInterval()
         alert("Time's up!")
+    }
+    if(countDown < 11){
+        timer.style.color = "red"
     }
 }
 
@@ -65,6 +68,7 @@ function startQuiz() {
     <p>C:   ${questions[currentQ].c}</p>`;
     btnDiv.style.display = "block";
     scoreP.style.display = "block";
+    scoreP.innerHTML = "Score = " + scoreValue
     setInterval(timerFunction, 1000);
 }
 
@@ -107,7 +111,7 @@ function checkAnswer(userAns){
 
 function answerIsCorrenct(){
     scoreValue++;
-    scoreP.innerText=scoreValue;
+    scoreP.innerText="Score = " + scoreValue;
     newQuestion();
 }
 

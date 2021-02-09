@@ -30,7 +30,7 @@ body {
 #timer {
     color: green;
     font-weight: bolder;
-    size: 70px;
+    font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -62,7 +62,7 @@ p {
 }
 
 #score-p {
-    font-size: 40px;
-    color: green;
-    font-weight: bold;
+    font-size: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
 }
