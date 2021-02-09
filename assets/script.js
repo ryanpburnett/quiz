@@ -38,7 +38,7 @@ let questions = [
     },
 ]
 
-let countDown = 5
+let countDown = 100
 let timerInterval
 
 function timerFunction() {
@@ -65,9 +65,9 @@ function startQuiz() {
     questionDiv.innerHTML = questions[currentQ].q;
     answerDiv.style.display = "block";
     answerDiv.innerHTML = 
-    `<p>A:   ${questions[currentQ].a}</p> 
-    <p>B:   ${questions[currentQ].b}</p> 
-    <p>C:   ${questions[currentQ].c}</p>`;
+    `<p>A: ${questions[currentQ].a}</p> 
+    <p>B: ${questions[currentQ].b}</p> 
+    <p>C: ${questions[currentQ].c}</p>`;
     btnDiv.style.display = "block";
     scoreP.style.display = "block";
     scoreP.innerHTML = "Score = " + scoreValue

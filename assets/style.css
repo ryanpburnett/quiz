@@ -25,6 +25,15 @@ body {
     border-width: 3px;
     background-color: Red;
     font-size: 50px;
+    animation-name: animateStart;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animateStart {
+    0% {background-color: red;}
+    50% {background-color: rgba(116, 0, 0, 0.794);}
+    100% {background-color: red;}
 }
 
 #timer {
