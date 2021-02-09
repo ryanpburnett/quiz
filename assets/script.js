@@ -38,7 +38,7 @@ let questions = [
     },
 ]
 
-let countDown = 15
+let countDown = 100
 
 function timerFunction() {
     if(countDown > 0){
