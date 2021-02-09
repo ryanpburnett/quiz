@@ -1,4 +1,5 @@
 const start = document.getElementById("start")
+const timer = document.getElementById('timer')
 const questionDiv = document.getElementById("question-div")
 const answerDiv = document.getElementById("answer-div")
 const btnDiv = document.getElementById("btn-div")
@@ -16,25 +17,27 @@ let questions = [
         a: "Humans Try Milking Llamas",
         b: "HyperText Markup Language",
         c: "HyperText Managing Language",
-        ans: "B"
+        ans: "B",
+        joke: "A"
     },
     {
         q: "What does CSS stand for?",
         a: "Cascading Style Sheets",
         b: "Cuneiform Style Sheets",
         c: "Captain Sammy Says",
-        ans: "A"
+        ans: "A",
+        joke: "C"
     },
     {
         q: "What Does JS stand for?",
         a: "Johan Sebastian (Bach)",
         b: "JavaStyle",
         c: "JavaScript",
-        ans: "C"
+        ans: "C",
+        joke: "A"
     },
 ]
 
-const timer = document.getElementById('timer')
 let countDown = 100
 
 function timerFunction() {
@@ -52,6 +55,7 @@ lastQIndex = questions.length
 
 function startQuiz() {
     start.style.display = "none";
+    timer.style.display = "block";
     questionDiv.style.display = "block";
     questionDiv.innerHTML = questions[currentQ].q;
     answerDiv.style.display = "block";
@@ -74,8 +78,8 @@ function endQuiz(){
     localStorage.setItem("score", scoreValue);
     let highScoreList = 
     localStorage.getItem("initials") + " " +
-    localStorage.getItem("score")
-    alert(highScoreList)
+    localStorage.getItem("score");
+    alert(highScoreList);
 }
 
 function newQuestion() {
@@ -93,6 +97,8 @@ function newQuestion() {
 function checkAnswer(userAns){
     if (questions[currentQ].ans === userAns){
         answerIsCorrenct();
+    }else if(questions[currentQ].joke === userAns){
+        alert("C'mon, that's the joke answer!")
     }else{
         answerIsIncorrect();
     }
