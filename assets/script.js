@@ -103,6 +103,7 @@ function checkAnswer(userAns){
         answerIsCorrenct();
     }else if(questions[currentQ].joke === userAns){
         alert("C'mon, that's the joke answer!")
+        answerIsIncorrect();
     }else{
         answerIsIncorrect();
     }
