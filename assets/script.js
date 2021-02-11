@@ -83,8 +83,8 @@ function endQuiz(){
     localStorage.setItem("initials", initials);
     localStorage.setItem("score", scoreValue);
     let highScoreList = 
-    localStorage.getItem("initials") + " " +
-    localStorage.getItem("score");
+    localStorage.getItem("initials") + " has scored " +
+    localStorage.getItem("score") + " points!";
     alert(highScoreList);
 }
 
